@@ -1,8 +1,8 @@
-h1. These are the sources for my blog
+# These are the sources for my blog
 
 I'm fed up with blogspot, therefore going back to the roots. Static pages without Javascript, flip yeah!
 
-h1. License
+# License
 The following directories and their contents are licensed under a [CC Attribution-ShareAlike][http://creativecommons.org/licenses/by-sa/3.0/] license.
 
 * _posts/
