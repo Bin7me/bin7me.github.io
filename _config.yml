@@ -1,0 +1,21 @@
+name: sudden kernel panic
+slogan: linux, life and entropy
+markdown: redcarpet
+pygments: true
+author:
+  name: Michael Schätzlein
+  google_plus: 106482422835272164694 
+  twitter: mschaetzlein
+  github: bin7me
+paginate: 2
+excerpt_separator: <!--more-->
+navigation:
+  - text: home
+    title: back to the home page
+    url: /index.html
+  - text: archive
+    title: archive 
+    url: /archive.html
+  - text: about
+    title: about me
+    url: /about.html
