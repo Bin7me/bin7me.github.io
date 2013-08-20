@@ -170,6 +170,11 @@ pre, code {
   margin-top: 15px;
 }
 
+#logo {
+  box-shadow: none;
+  min-width: 64px;
+}
+
 #top-nav li {
   display: inline;
   padding: 0 5px;
