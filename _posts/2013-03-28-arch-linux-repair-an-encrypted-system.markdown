@@ -13,13 +13,13 @@ The situation: You have set up a full disk encryption using LVM on LUKS (probabl
 
 Hint: **Never** use `pacman --force` unless you know exactly what you are doing!
 
-Either way your system doesn't boot anymore and you don't know what to do. Back in the old days when your system was an unencrypted source of joy and happiness, you would've whipped out your trusty Arch Linux Installation CD, chrooted into your installation and tried stuff you found on the forums until everything was fine again. In the worst case you could always format your `/root` (you *do* have a seperate root partition, don't you?) and start over again with a fresh installation.
+Either way your system doesn't boot anymore and you don't know what to do. Back in the old days when your system was an unencrypted source of joy and happiness, you would've whipped out your trusty Arch Linux Installation CD, chrooted into your installation and tried stuff you found on the forums until everything was fine again. In the worst case you could always format your `/root` (you *do* have a separate root partition, don't you?) and start over again with a fresh installation.
 
 But those days are gone for good, because you decided to add another layer of security and to encrypt your whole system. Maybe you followed a guide to encryption step by step, tweaking the arguments to all the commands to your needs, without caring what every single command does (Don't feel bad about it! I've been there, I've done that too) or you just can't remember what you did exactly. Either way you're facing the problem of not being able to chroot into your installation. Keep it up! The solution is pretty easy.
 
 ## Step 0: Chrooting into the encrypted system 
 
-I'm assuming you have an unencrypted `/boot`-partition on `/dev/sda1` and an encrypted partition containing your LVM on `/dev/sda2`. After booting with the installation cd and setting up your favourite keyboard-layout and font. You can just type
+I'm assuming you have an unencrypted `/boot`-partition on `/dev/sda1` and an encrypted partition containing your LVM on `/dev/sda2`. After booting with the installation CD and setting up your favourite keyboard-layout and font. You can just type
 
 {% highlight bash %}
 # cryptsetup luksOpen /dev/sda2 crypt
