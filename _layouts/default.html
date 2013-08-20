@@ -20,33 +20,26 @@
     <body class="wrap wider">
 		<header>
 			<div class="grid header-navigation">
-				<div class="unit one-quarter">
+				<div class="unit one-third center-on-mobiles">
 					<div id="title">
 					  <a href="{{ site.baseurl }}">{{ site.name }}</a>
 					</div>
 				</div>
-				<div class="unit three-quarters">
-					<div class="grid">
-						<div class="unit four-fifths">
-							{% include navigation.html %}
-						</div>
-						<div class="unit one-fifth social">
-							<a href="https://plus.google.com/{{ site.author.google_plus }}">
-								<img class="social" src="{{ site.baseurl }}assets/img/social/gplus-logo.png" alt="google+"/>
-							</a>
-							<a href="https://twitter.com/{{ site.author.twitter }}">
-								<img class="social" src="{{ site.baseurl }}assets/img/social/twitter-logo.png" alt="twitter"/>
-							</a>
-						</div>
-					</div>
+				<div class="unit two-thirds center-on-mobiles">
+					{% include navigation.html %}
 				</div>
 			</div>
-			<a href="https://github.com/{{ site.author.github }}"><img style="position: absolute; top: 0; right: 0; border: 0; box-shadow: none;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+			<a class="hide-on-mobiles" href="https://github.com/{{ site.author.github }}"><img style="position: absolute; top: 0; right: 0; border: 0; box-shadow: none;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
 		</header>
 		
 		<div class="grid no-gutters content">
-			<div class="unit one-quarter hide-on-mobiles">
-				{% include sidebar.html %}
+			<div class="unit one-quarter">
+				<div class="default-sidebar">
+					{% include sidebar.html %}
+				</div>
+				<div class="mobile-sidebar">
+					{% include mobile_sidebar.html %}
+				</div>
 			</div>
 
 			<div class="unit three-quarters">
