@@ -1,0 +1,13 @@
+<div>
+  <nav id="side-nav">
+	<select class="drop-nav" onchange="location = this.options[this.selectedIndex].value;" >
+      {% for node in site.posts %}
+        {% if page.url == node.url %}
+          <option selected value="{{node.url}}">{{node.title}}</option>
+        {% else %}
+          <option value="{{node.url}}">{{node.title}}</option>
+        {% endif %}
+      {% endfor %}
+	</select>
+  </nav>
+</div>
