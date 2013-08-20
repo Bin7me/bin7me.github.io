@@ -12,6 +12,8 @@ body {
   font-size: 21px;
   font-weight: 300;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  width: 100%;
+  overflow: hidden;
 }
 
 a {
