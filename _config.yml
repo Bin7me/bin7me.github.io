@@ -20,3 +20,6 @@ navigation:
   - text: about
     title: about me
     url: /about.html
+  - text: feed
+    title: rss feed
+    url: /feed.xml
