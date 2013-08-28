@@ -1,5 +1,6 @@
 name: sudden kernel panic
-slogan: linux, life and entropy
+description: linux, life and entropy
+url: http://bin7me.github.io
 markdown: redcarpet
 pygments: true
 author:
