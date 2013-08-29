@@ -116,7 +116,7 @@ Then, we have to adjust the `/mnt/etc/crypttab` accordingly. Just add the follow
 crypt_hdd UUID=xyz /root/keyfile luks
 {% endhighlight %}
 
-Where xyz is the UUID of '/dev/sdb1'. If you don't know it by heart, you can find it like this:
+Where xyz is the UUID of `/dev/sdb1`. If you don't know it by heart, you can find it like this:
 
 {% highlight bash %}
 # ls -l /dev/disk/by-uuid
