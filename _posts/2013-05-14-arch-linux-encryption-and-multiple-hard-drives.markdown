@@ -15,7 +15,7 @@ Although it's not that difficult to adapt those guides in a way that all drive a
 
 ## Step 0: Preparing the hard drives
 
-First step after having overwritten the drives with random data (maybe) is as usual the setup of the partition layout. In the following example we have two hard drives: `/dev/sda` for the the boot and the root partition and `/dev/sdb` for everything else. It is of course also possible to have another lvmpool instead of the sole root partition or having a lvmpool spanning over both hard drives, but let's keep it simple for now.
+First step after having overwritten the drives with random data (maybe) is as usual the setup of the partition layout. In the following example we have two hard drives: `/dev/sda` for the boot and the root partition and `/dev/sdb` for everything else. It is of course also possible to have another lvmpool instead of the sole root partition or having a lvmpool spanning over both hard drives, but let's keep it simple for now.
 
 [![partitioning the first hard drive with cfdisk][cfdisk]][cfdisk]
 [![partitioning the second hard drive with cfdisk][cfdisk2]][cfdisk2]
@@ -24,9 +24,9 @@ In the next steps we'll encrypt both `/dev/sda2`, the root partition, and `/dev/
 
 ## Step 1: Setting up the encrypted partitions
 
-Now comes the crucial part of this guide: Encrypt all partitions in a way that enables us to decrypt both with a single passphraseentered at boot. The secret to achieving this state has a name: *Keyfile*.
+Now comes the crucial part of this guide: Encrypt all partitions in a way that enables us to decrypt both with a single passphrase entered at boot. The secret to achieving this state has a name: *Keyfile*.
 
-Instead of encrypting both partitions with a passphrase, we'll encrypt only `/dev/sda2` with a passphrase and `/dev/sdb1` with a keyfile. The keyfile will be stored on `/dev/sda2` and is therefore only available if the passphrase as entered first. We'll later configure the system that `/dev/sdb1` is automatically decrypted as soon as the keyfile becomes available. Thus only one passphrasehas to be entered to decrypt two partitions. Nice.
+Instead of encrypting both partitions with a passphrase, we'll encrypt only `/dev/sda2` with a passphrase and `/dev/sdb1` with a keyfile. The keyfile will be stored on `/dev/sda2` and is therefore only available if the passphrase as entered first. We'll later configure the system that `/dev/sdb1` is automatically decrypted as soon as the keyfile becomes available. Thus only one passphrase has to be entered to decrypt two partitions. Nice.
 
 It might not be necessary to load the kernel module explicitly, but better safe than sorry:
 
@@ -116,7 +116,7 @@ Then, we have to adjust the `/mnt/etc/crypttab` accordingly. Just add the follow
 crypt_hdd UUID=xyz /root/keyfile luks
 {% endhighlight %}
 
-Where xyz is the UUID of '/dev/sdb1'. If you don't know it by heart, you can find it like this:
+Where xyz is the UUID of `/dev/sdb1`. If you don't know it by heart, you can find it like this:
 
 {% highlight bash %}
 # ls -l /dev/disk/by-uuid

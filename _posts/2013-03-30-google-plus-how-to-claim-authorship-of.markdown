@@ -37,7 +37,7 @@ Simply go to your google+ profile and add a link to your blog's main page to the
 
 ## Step 2: Check the result
 
-Google provides us with the [structured data testing tool][structuredDataTestingTool] to check which information can be derived from our page. Just enter the adress of your blog and click 'Preview'. The result should look similar to the picture:
+Google provides us with the [structured data testing tool][structuredDataTestingTool] to check which information can be derived from our page. Just enter the address of your blog and click 'Preview'. The result should look similar to the picture:
 
 [![output of the structured data testing tool][richsnippets]][richsnippets]
 

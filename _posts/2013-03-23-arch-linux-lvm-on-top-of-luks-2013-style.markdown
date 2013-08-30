@@ -9,7 +9,7 @@ Having not installed arch linux for some time, I was kind of surprised that the 
 
 I couldn't find a guide utilizing the current method of installing arch linux, so I decided to update Simon's guide to 2013. I'll explain setting up LVM on top of an encrypted partition, because it's easier and more convenient than the other way round. 
 
-*Advice:* You should definitley **backup your data** and read the [Beginner's Guide](https://wiki.archlinux.org/index.php/Beginners%27_Guide) to get comfortable with the installation process.
+*Advice:* You should definitely **backup your data** and read the [Beginner's Guide](https://wiki.archlinux.org/index.php/Beginners%27_Guide) to get comfortable with the installation process.
 
 <!--more-->
 
@@ -86,7 +86,7 @@ First of all we have to initialize the physical volume and create a volume group
 # lvm vgcreate lvmpool /dev/mapper/crypt
 {% endhighlight %}
 
-The following commands are just an example and should be adjusted to your needs. I strongly advice to seperate `/root` and `/home`, the `swap` partition might be optional if you have enough RAM. To create a new logical volume lvm lvcreate is used:
+The following commands are just an example and should be adjusted to your needs. I strongly advice to separate `/root` and `/home`, the `swap` partition might be optional if you have enough RAM. To create a new logical volume lvm lvcreate is used:
 
 {% highlight bash %}
 # lvm lvcreate -L 10GB -n root lvmpool
