@@ -10,6 +10,8 @@ I started my blog on [blogger.com][blogger] because it seemed like a quick and c
 
 The solution: Running my own blog somewhere safe.
 
+<!--more-->
+
 ## Quest for an alternative
 My top three requirements were as follows:
 
