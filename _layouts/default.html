@@ -38,22 +38,22 @@
     <body class="wrap wider">
 		<header>
 			<div class="grid header-navigation">
-				<div class="unit one-third center-on-mobiles">
+				<div class="unit two-fifths center-on-mobiles">
 					<div class="grid">
-						<div class="unit one-quarter">
+						<div id="logo-div" class="unit one-quarter center-on-mobiles">
 						  <a href="{{ site.baseurl }}">
 							  <img id="logo" src="{{ site.baseurl }}assets/img/logo.png" alt="sudden kernel panic"/></a>
 						</div>
-						<div id="title" class="unit three-quarters">
-						  <a href="{{ site.baseurl }}">{{ site.name }}</a>
+						<div id=title-description class="unit three-quarters center-on-mobiles">
+						  <span id="title"><a href="{{ site.baseurl }}">{{ site.name }}</a></span><br />
+						  <span id="description">{{ site.description }}</span>
 						</div>
 					</div>
 				</div>
-				<div class="unit two-thirds center-on-mobiles">
+				<div class="unit three-fifths center-on-mobiles">
 					{% include navigation.html %}
 				</div>
 			</div>
-			<a class="hide-on-mobiles" href="https://github.com/{{ site.author.github }}"><img style="position: absolute; top: 0; right: 0; border: 0; box-shadow: none;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
 		</header>
 		
 		<div class="grid no-gutters content">
