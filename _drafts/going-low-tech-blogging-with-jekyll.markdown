@@ -10,8 +10,12 @@ But nevertheless I didn't feel quite at home. The initial loading animation befo
 
 The solution: Running my own blog somewhere safe.
 
-## The candidates
-- wordpress -> php
+## Why Jekyll?
+There were several alternatives on the table:
+
+### Wordpress
+Perhaps *the* go-to blog software. Big community, lots of themes and enhancements available, written in PHP. The last point was the deciding factor against wordpress. 
+
 - writing own blog engine with play! or rails -> overkill
 - blogofile or jekyll -> jekyll because of ruby
 
