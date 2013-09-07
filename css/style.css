@@ -182,6 +182,10 @@ pre, code {
   font-weight: none;
 }
 
+#top-nav {
+  text-align: center;
+}
+
 #top-nav li {
   display: inline;
   padding: 0 5px;
