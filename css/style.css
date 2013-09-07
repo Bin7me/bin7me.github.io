@@ -157,16 +157,29 @@ pre, code {
   text-align: center;
 }
 
-#title {
+#logo-div {
   text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  margin-top: 15px;
 }
 
 #logo {
   box-shadow: none;
   min-width: 64px;
+}
+
+#title-description {
+  text-align: center;
+}
+
+#title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#description {
+  text-align: center;
+  font-size: 16px;
+  font-weight: none;
 }
 
 #top-nav li {
