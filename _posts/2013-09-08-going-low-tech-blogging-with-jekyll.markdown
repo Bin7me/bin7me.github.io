@@ -32,7 +32,7 @@ After short research my decision was between [Blogofile][blogofile] and [Jekyll]
 ## Low Tech, High Life
 A blog usually consists of a content database, a bunch of CSS templates for the frontend, some backend-voodoo in between and a bunch of javascript to glue everything neatly together. In return you get a lot of nice features like comments, rich-text-editing, drag-and-drop rearranging, etc.
 
-Jekyll as a static blog generator works different. It too has templates in terms of html files infused [Liquid][liquid], and is able to include javascript, but it offers a complete lack of a database and server-side business logic. This opens up several advantages:
+Jekyll as a static blog generator works different. It too has templates in terms of [Liquid][liquid] infused HTML and is able to include javascript, but it offers a complete lack of a database and server-side business logic. This opens up several advantages:
 
 - No ugly user input that has to be dealt with
 - Posts are written in your text editor of choice
