@@ -6,7 +6,7 @@ category: technology
 ## Introduction
 As promised in my [post about switching to Jekyll][jekyllBlogging], here's a short guide for a simple setup. I'll try to cover the basics and show an alternative to the usual 'styling with bootstrap' approaches. Plugins are not part of this tutorial, too, because the goal is to make the page compatible to github pages.
 
-<!-- more -->
+<!--more-->
 
 ## Setup
 If your have ruby installed, the setup boils down to four simple steps:
