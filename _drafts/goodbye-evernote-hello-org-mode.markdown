@@ -20,7 +20,7 @@ After some fiddling with org-mode I reevaluated my use of Evernote and realized 
 Especially 1. and 3. might be a hint that Evernote was never really integrated into my daily workflow. Therefore migrating only the core of my notes to org-mode and ditching everything else will be enough.
 
 ## The tricky part
-For versioning and syncing my notes I use a private [git][git] repository hosted on [bitbucket][bitbucket]. Emacs as well as git are available for Windows too, finally a native solution for my desktop and laptop. The problem in this equation is my smartphone. There is a Emacs port for Android, but without a hardware keyboard it's tedious to use and I would still need a git client to get access to my notes. Org has a feature to interact with a companion application named MobileOrg, but I haven't had the time to look into it and to be honest, it looks a bit outdated.
+For versioning and syncing my notes I use a private [git][git] repository hosted on [bitbucket][bitbucket]. Emacs as well as git are available for Windows too, finally a native solution for my desktop and laptop. The problem in this equation is my smartphone. There is a Emacs port for Android, but without a hardware keyboard it's tedious to use and I would still need a git client to get access to my notes. Org has a feature to interact with a companion application named MobileOrg, but I haven't had the time to look into it and to be honest, it looks a bit outdated. The surprising solution: [DroidEdit Pro][droidEditPro].
 
 [bitbucket]: https://www.bitbucket.org
 [droidEditPro]: https://play.google.com/store/apps/details?id=com.aor.droidedit.pro
