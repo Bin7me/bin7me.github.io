@@ -1,17 +1,16 @@
 body {
-  color: #ddd;
-  background: #333;
+  color: #333;
+  background: #fff;
   margin: 0px;
-  border-top: 5px solid #ffd308;
-  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-top: 5px solid #0292cc;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 20px;
   font-weight: 300;
-  text-shadow: 0 1px 2px rgba(0,0,0,.8);
   width: 100%;
 }
 
 a {
-  color: #ffd308;
+  color: #0292cc;
   text-decoration: none;
   transition: all .25s;
   -moz-transition: all .25s;
@@ -19,7 +18,7 @@ a {
 }
 
 a:hover {
-  color: #f90;
+  color: #016c96;
 }
 
 a.paginator {
@@ -38,6 +37,10 @@ a.paginator:hover {
   background: #888;
 }
 
+h2, h3, h4 {
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 span.disabled {
   color: #fff;
   font-size: 16px;
@@ -52,11 +55,11 @@ span.disabled {
 }
 
 article {
-  background: #444;
+  background: #dbdbdb;
   border-radius: 10px;
   padding: 21px;
   box-shadow: 0 3px 10px rgba(0,0,0,.1);
-  font-size: 21px;
+  font-size: 18px;
   text-align: justify;
 }
 
@@ -78,9 +81,10 @@ img.myself {
 }
 
 header {
-  background: #444444;
+  background: #dbdbdb;
   margin-bottom: 20px;
-  border-bottom: 2px solid #252525;
+  border-bottom: 2px solid #767676;
+  box-shadow: 0 3px 10px rgba(0,0,0,.1);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -125,7 +129,7 @@ pre, code {
 }
 
 .highlight, p > pre, p > code, p > nobr > code, li > code, h5 > code, .note > code {
-  background: #333;
+  background: #444;
   color: #fff;
   border-radius: 5px;
   box-shadow: inset 0 1px 10px rgba(0,0,0,.3),
@@ -141,7 +145,7 @@ pre, code {
 }
 
 .highlight {
-  padding: 10px 0;
+  padding: 5px 0;
   width: 100%;
   overflow: auto;
 }
@@ -174,6 +178,7 @@ pre, code {
   text-align: center;
   font-size: 28px;
   font-weight: bold;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #description {
@@ -208,14 +213,13 @@ pre, code {
 }
 
 #top-nav li a:hover {
-  background: #252525;
+  background: #bbb;
   padding: 0.5em 1em;
   box-shadow: inset 0 1px 3px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1);
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
 #top-nav li.active a {
-  background: #fc0;
+  background: #0092cc;
   color: #222;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 1px 5px rgba(0,0,0,.5);
   text-shadow: 0 1px 0 rgba(255,255,255,.3);
@@ -242,9 +246,10 @@ pre, code {
 }
 
 .side-nav li:hover {
-  background: #252525;
+  background: #bbb;
   box-shadow: inset 0 1px 3px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1);
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .side-nav li.active {
@@ -271,9 +276,8 @@ pre, code {
 }
 
 .meta {
-  color: #aaa;
+  color: #767676;
   font-weight: 600;
-  text-shadow: 0 -1px 0 #000;
   vertical-align: middle;
   font-size: 18px;
 }
@@ -301,9 +305,8 @@ pre, code {
 }
 
 #archive li:hover {
-  background: #252525;
+  background: #bbb;
   box-shadow: inset 0 1px 3px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1);
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
 .post {
@@ -319,6 +322,7 @@ pre, code {
 #about {
   background: #333;
   color: #fff;
+  font-size: 16px;
   border-radius: 5px;
   box-shadow: inset 0 1px 10px rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,.1), 0 -1px 0 rgba(0,0,0,.5);
   padding: .5em;
