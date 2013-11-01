@@ -59,8 +59,9 @@ article {
   border-radius: 10px;
   padding: 21px;
   box-shadow: 0 3px 10px rgba(0,0,0,.1);
-  font-size: 18px;
+  font-size: 16px;
   text-align: justify;
+  line-height: 1.5em;
 }
 
 img {
@@ -95,14 +96,13 @@ pre, code {
   margin: 0;
   padding: 0;
   font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
-  font-size: 14px;
+  font-size: 12px;
   padding: 0 .5em;
-  line-height: 1.8em;
 }
 
 @media (min-width: 768px){
   pre, code {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -310,7 +310,6 @@ pre, code {
 }
 
 .post {
-  line-height: 1.5em;
 }
 
 .backwards {
@@ -338,7 +337,6 @@ pre, code {
 }
 
 .about-code {
-  font-size: 18px;
   word-spacing: 5px;
   line-height: 1.5em;
 }
