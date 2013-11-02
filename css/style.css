@@ -95,6 +95,34 @@ pre, code {
   padding: 0 .5em;
 }
 
+table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+th {
+  border-bottom: 2px solid;
+}
+
+th, td {
+  padding: .3em;
+  padding-right: .5em;
+  margin: 2px;
+}
+
+tr {
+  border-bottom: 1px solid;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
 @media (min-width: 768px){
   pre, code {
     font-size: 14px;
