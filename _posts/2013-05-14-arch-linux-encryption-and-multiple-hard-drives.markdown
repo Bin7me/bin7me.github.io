@@ -30,31 +30,31 @@ Instead of encrypting both partitions with a passphrase, we'll encrypt only `/de
 
 It might not be necessary to load the kernel module explicitly, but better safe than sorry:
 
-{% highlight bash %}
+{% highlight console %}
 # modprobe dm_crypt
 {% endhighlight %}
 
 Now we encrypt `/dev/sda2` with our encryption algorithm of choice:
 
-{% highlight bash %}
+{% highlight console %}
 # cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 5000 -y luksFormat /dev/sda2
 {% endhighlight %}
 
 I wont go over all arguments in detail, as they are explained in [my guide][lvmOnLuks2013] and on the according [man page][cryptsetupManpage]. To encrypt `/dev/sdb1` we first a keyfile, 20KB of random data should be sufficient:
 
-{% highlight bash %}
+{% highlight console %}
 # dd if=/dev/urandom of=keyfile bs=1024 count=20
 {% endhighlight %}
 
 Now we can use this keyfile to encrypt /dev/sdb1:
 
-{% highlight bash %}
+{% highlight console %}
 # cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 5000 --key-file keyfile luksFormat /dev/sb1
 {% endhighlight %}
 
 Finally we open our new partitions to start setting up the lvm:
 
-{% highlight bash %}
+{% highlight console %}
 # cryptsetup luksOpen /dev/sda2 crypt_root 
 # cryptsetup --key-file keyfile luksOpen /dev/sdb1 crypt_pool
 {% endhighlight %}
@@ -65,7 +65,7 @@ The time has come to setup LVM on `crypt_pool`. The `crypt_root` partition won't
 
 Setting up the volumes is business as usual:
 
-{% highlight bash %}
+{% highlight console %}
 # lvm pvcreate /dev/mapper/crypt_pool
 # lvm vgcreate lvmpool /dev/mapper/crypt_pool
 # lvm lvcreate -L 5GB -n var lvmpool
@@ -79,7 +79,7 @@ Setting up the volumes is business as usual:
 
 Installing the base system contains no nasty surprises, thus let's quickly format all partitions and get over with it:
 
-{% highlight bash %}
+{% highlight console %}
 # mkfs.ext4 /dev/sda1
 # mkfs.ext4 /dev/mapper/crypt_root
 # mkfs.ext4 /dev/mapper/lvmpool-var
@@ -90,7 +90,7 @@ Installing the base system contains no nasty surprises, thus let's quickly forma
 
 Be careful to mount everything in the right spot before starting pacstrap:
 
-{% highlight bash %}
+{% highlight console %}
 # mount /dev/mapper/crypt_root /mnt
 # mkdir /mnt/boot
 # mkdir /mnt/var
@@ -106,7 +106,7 @@ Be careful to mount everything in the right spot before starting pacstrap:
 
 Before chrooting into the new installation we'll setup the auto-decryption of the second hard drive. First we copy the keyfile to somewhere safe:
 
-{% highlight bash %}
+{% highlight console %}
 # cp keyfile /mnt/root
 {% endhighlight %}
 
@@ -118,7 +118,7 @@ crypt_hdd UUID=xyz /root/keyfile luks
 
 Where xyz is the UUID of `/dev/sdb1`. If you don't know it by heart, you can find it like this:
 
-{% highlight bash %}
+{% highlight console %}
 # ls -l /dev/disk/by-uuid
 {% endhighlight %}
 

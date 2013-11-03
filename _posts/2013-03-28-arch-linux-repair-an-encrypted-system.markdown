@@ -21,7 +21,7 @@ But those days are gone for good, because you decided to add another layer of se
 
 I'm assuming you have an unencrypted `/boot`-partition on `/dev/sda1` and an encrypted partition containing your LVM on `/dev/sda2`. After booting with the installation CD and setting up your favourite keyboard-layout and font. You can just type
 
-{% highlight bash %}
+{% highlight console %}
 # cryptsetup luksOpen /dev/sda2 crypt
 {% endhighlight %}
 
@@ -31,7 +31,7 @@ and if you can provide the correct password, the partition will be made accessib
 
 As you can see, the existing LVM volumes were automatically recognized. Very convenient. Now you can mount the partitions and chroot into your environment:
 
-{% highlight bash %}
+{% highlight console %}
 # mount /dev/mapper/lvmpool-root /mnt
 # mount /dev/sda1 /mnt/boot
 # mount /dev/mapper/lvmpool-home /mnt/home
@@ -57,14 +57,14 @@ To be honest: If I cannot find a quick fix for a problem I tend to reinstall my 
 
 Now you are ready to reinstall everything. First of all you have to leave the chroot and unmount the partitions:
 
-{% highlight bash %}
+{% highlight console %}
 # exit
 # umount /mnt/{boot,home,}
 {% endhighlight %}
 
 Subsequently you can follow [my guide][lvmOnLuks2013] starting with Step 3. Don't format your home-partition if you want to keep it! A reboot later your system should be running again. You can now reinstall your packages using the previously generated list:
 
-{% highlight bash %}
+{% highlight console %}
 # pacman -S $(< pkglist)
 {% endhighlight %}
 
