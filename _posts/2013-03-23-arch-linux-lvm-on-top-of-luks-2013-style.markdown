@@ -18,7 +18,7 @@ I couldn't find a guide utilizing the current method of installing arch linux, s
 First of all we should overwrite the whole hard drive with random data to wipe everything that's been on there before. It's not necessary to encrypt your system, but it prevents potential attackers from retrieving old data from the drive. This step is entirely optional.
 
 To overwrite the drive type in:
-{% highlight bash %}
+{% highlight console %}
 # dd if=/dev/urandom of=/dev/HARDDRIVE
 {% endhighlight %}
 Depending on the size of the drive, this process may take a while so be patient. And with 'a while' I mean hours and hours of dreadful waiting, because dd doesn't provide any output until it's done and even small sized hard drives will take a long time to be processed (e.g. ~7h for 250GB). After that we have to prepare a `/boot` partition (~150-200MB), which will be left unencrypted, and a partition for LVM.
@@ -34,13 +34,13 @@ From now on, `/dev/sda1` will be the boot partition and `/dev/sda2` the to be en
 We'll encrypt the full `/dev/sda2` partition using a passphrase, thus the encryption is pretty straight forward:
 
 It might not be necessary to load the kernel module explicitly, but better safe than sorry:
-{% highlight bash %}
+{% highlight console %}
 # modprobe dm_crypt
 {% endhighlight %}
 
 Now we encrypt the whole partition with our encryption algorithm of choice:
 
-{% highlight bash %}
+{% highlight console %}
 # cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 5000 -y luksFormat /dev/sda2
 {% endhighlight %}
 
@@ -61,7 +61,7 @@ In detail:
 
 To check if everything went right, we can dump the header information of the new encrypted partition with
 
-{% highlight bash %}
+{% highlight console %}
 # cryptsetup luksDump /dev/sda2
 {% endhighlight %}
 
@@ -71,7 +71,7 @@ The command should for example display some information about the used algorithm
 
 Finally, we open the encrypted partition to start setting up the LVM with
 
-{% highlight bash %}
+{% highlight console %}
 # cryptsetup luksOpen /dev/sda2 crypt
 {% endhighlight %}
 
@@ -81,14 +81,14 @@ which will make the new partition available as /dev/mapper/crypt.
 
 First of all we have to initialize the physical volume and create a volume group:
 
-{% highlight bash %}
+{% highlight console %}
 # lvm pvcreate /dev/mapper/crypt
 # lvm vgcreate lvmpool /dev/mapper/crypt
 {% endhighlight %}
 
 The following commands are just an example and should be adjusted to your needs. I strongly advice to separate `/root` and `/home`, the `swap` partition might be optional if you have enough RAM. To create a new logical volume lvm lvcreate is used:
 
-{% highlight bash %}
+{% highlight console %}
 # lvm lvcreate -L 10GB -n root lvmpool
 # lvm lvcreate -L 1GB -n swap lvmpool
 # lvm lvcreate -l 100%FREE -n home lvmpool
@@ -104,7 +104,7 @@ If it doesn't look like it's supposed to be, `lvm lvremove <volume name>` lets y
 
 First of all we have to format our new partitions. I'll use ext4 for everything, you might have to adjust the following commands if you want something else. Don't forget `/boot` and `swap`!
 
-{% highlight bash %}
+{% highlight console %}
 # mkfs.ext4 /dev/sda1
 # mkfs.ext4 /dev/mapper/lvmpool-root
 # mkfs.ext4 /dev/mapper/lvmpool-home
@@ -130,7 +130,7 @@ HOOKS="base udev autodetect modconf block keymap encrypt lvm2 filesystems keyboa
 
 The keymap hook is only necessary if you changed the keyboard layout prior to the creation of the encrypted partition. The encrypt hook has to be loaded *before* the `lvm2` hook! After that we can create the new ramdisk with
 
-{% highlight bash %}
+{% highlight console %}
 # mkinitcpio -p linux
 {% endhighlight %}
 
