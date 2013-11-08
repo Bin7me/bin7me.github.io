@@ -40,7 +40,7 @@ Now we encrypt `/dev/sda2` with our encryption algorithm of choice:
 # cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 5000 -y luksFormat /dev/sda2
 {% endhighlight %}
 
-I wont go over all arguments in detail, as they are explained in [my guide][lvmOnLuks2013] and on the according [man page][cryptsetupManpage]. To encrypt `/dev/sdb1` we first a keyfile, 20KB of random data should be sufficient:
+I wont go over all arguments in detail, as they are explained in [my guide][lvmOnLuks2013] and on the according [man page][cryptsetupManpage]. To encrypt `/dev/sdb1` we first need a keyfile, 20KB of random data should be sufficient:
 
 {% highlight console %}
 # dd if=/dev/urandom of=keyfile bs=1024 count=20
