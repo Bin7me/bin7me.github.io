@@ -48,20 +48,20 @@ Altogether this replicates my Evernote setup pretty close and surpasses it at so
 ### Cross-Device Synchronization
 For versioning and syncing my notes I use a private [git][git] repository hosted on [bitbucket][bitbucket]. Emacs as well as git are available for Windows too, finally a native solution for my desktop and laptop. The problem in this equation is my smartphone. There is an Emacs port for Android, but without a hardware keyboard it's tedious to use and I would still need a git client to get access to my notes. Org has a feature to interact with a companion application named MobileOrg, but I didn't have the time to look into it and to be honest, it looks a bit outdated. The surprising solution: [DroidEdit Pro][droidEditPro].
 
-DroidEdit Pro is a text editor for Android with syntax highlighting for common programming languages (unfortunately not for org-files), and it has integrated a basic git client! It can pull revisions from my repository, commit my changes and push them back to bitbucket. Merges et al. are not possible, but those are few and can easily be done when I'm back at my PC. Overall it's not as beautiful as the Evernote mobile application and without syntax highlighting and folding, navigating org files is a bit diffcult. Therefore I put my most often needed information into my `notes.org` so that it stays small and clear. Currently it's only 27 lines long and contains mostly Wifi-keys an such. New notes are solely put into `inbox.org` and refiled when I'm back at my PC. I tend not to write longer notes on my smartphone, so this works surprisingly well.
+DroidEdit Pro is a text editor for Android with syntax highlighting for common programming languages (unfortunately not for org-files), and it has integrated a basic git client! It can pull revisions from my repository, commit my changes and push them back to bitbucket. Merges et al. are not possible, but those are few and can easily be done when I'm back at my PC. Nevertheless it's not as beautiful as the Evernote mobile application and without syntax highlighting and folding, navigating org files is a bit diffcult. Therefore I put my most often needed information into my `notes.org` so that it stays small and clear. Currently it's only 27 lines long and contains mostly Wifi-keys an such. New notes are solely put into `inbox.org` and refiled when I'm back at my PC. I tend not to write longer notes on my smartphone, thus this works surprisingly well.
 
 Both `img/` and `files/`  are synced with the help of [BitTorrent Sync][btsync]. My smartphone is always on and works as sort of a relay for the sync between my notebook and my PC. My whole Evernote profile currently has less than 500 MB, so space is no problem, als long as I don't put ridiculous large files in the folders.
 
 Unfortunately BitTorrent Sync is not free software. It works very well and due to it's nature should be save from eavesdropping, but if you prefer free software you should have a look at [git-annex][gitAnnex]. Git-annex is a file managment solution built on top of git and might be an alternative for distributing your files across your devices. I have not tried it yet, but it looks promising.
 
 ## Drawbacks
-Overall my setup works very well for me, though I'm not 100% happy with my mobile solution. But as mobile access get's more uncomfortable, I'm forced to remember more stuff the "old-school" hard way without technology, which is kind of a benefit. In the end, three major drawbacks remain:
+Overall my setup works very well for me, though I'm not 100% happy with my mobile solution. But as mobile access get's less comfortable, I'm forced to remember more stuff the "old-school" way without technology, which is kind of a benefit. In the end, three major drawbacks remain:
 
 1. org-mode on smartphones is a ugly and uncomfortable
 2. no web-clipper
 3. no shared notebooks
 
-Coping with the last two is easy, I don't need them. The first point is currently _the_ flaw in my system, but as time goes on, new solutions will arise and maybe mitigate this problem. On the other hand are a couple of benefits which help soothing the pain:
+Coping with the last two is easy, I don't really need them. The first point is currently _the_ flaw in my system, but as time goes on, new solutions will arise and maybe mitigate this problem. On the other hand are a couple of benefits which help soothing the pain:
 
 1. it's not only notes but a life planning tool
 2. magnificent exporting capabilities
