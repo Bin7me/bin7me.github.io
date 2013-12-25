@@ -46,22 +46,11 @@
 				</div>
 			</div>
 		</header>
-		
-		<div class="grid no-gutters content">
-			<div class="unit one-quarter">
-				<div class="default-sidebar">
-					{% include sidebar.html %}
-				</div>
-				<div class="mobile-sidebar">
-					{% include mobile_sidebar.html %}
-				</div>
-			</div>
-
-			<div class="unit three-quarters">
-				<article>
-					{{ content }}
-				</article>
-			</div>
+		<div id="article">
+		  <article>
+			{{ content }}
+		  </article>
+		</div>
 		</div>
     </body>
 </html>
