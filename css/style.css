@@ -74,7 +74,7 @@ code {
 }
 
 pre {
-  font-family: Droid Sans Mono, Monaco, Consolas, "Lucida Console", monospace;
+  font-family: Droid Sans Mono, Consolas, "Lucida Console", monospace;
   color: black;
   font-size: 90%;
   background-color: #ffffff;
@@ -82,16 +82,6 @@ pre {
   border: 2px solid #dddddd;
   overflow: auto;
 }
-
-/*pre, code {
-  white-space: pre;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
-  font-size: 12px;
-  padding: 0 .5em;
-}*/
 
 table {
   display: block;
