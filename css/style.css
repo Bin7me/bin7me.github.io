@@ -25,6 +25,8 @@ span.disabled {
 }
 
 #article {
+  background: #ecf2f5;
+  border-radius: 10px;
   padding: 21px;
   margin: auto;
   margin-bottom: 21px;
@@ -233,8 +235,8 @@ pre > code {
 }
 
 .backwards {
-  unicode-bidi:bidi-override;
-  direction:rtl;
+  unicode-bidi: bidi-override;
+  direction: rtl;
   text-align: left;
 }
 
