@@ -35,7 +35,6 @@ span.disabled {
   font-size: 16px;
   text-align: justify;
   line-height: 1.5em;
-  width: 75%;
 }
 
 #article a:hover {
@@ -110,6 +109,11 @@ thead {
 }
 
 @media (min-width: 768px){
+
+  #article {
+	width: 75%;
+  }
+
   pre, code {
     font-size: 14px;
   }
@@ -117,7 +121,7 @@ thead {
 
 @media (max-width: 568px) {
 
-  article {
+  #article {
 	text-align: left;
   }
 
