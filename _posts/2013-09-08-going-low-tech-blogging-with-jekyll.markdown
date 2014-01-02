@@ -3,7 +3,7 @@ layout: post
 title: "Going low-tech: Blogging with jekyll"
 category: life
 ---
-## Introduction
+
 Most of the groundwork is done, therefore I can finally explain what happend here:
 
 I started my blog on [blogger.com][blogger] because it seemed like a quick and convenient way to publish my occasional article about GNU/Linux, life and technology, but over time I got a bit annoyed with it. The system generates the current view dynamically with heavy use of javascript which leads to parts of the page breaking frequently if one of the content delivery servers doesn't respond in time. On my blog, prime candidates for this kind of breakage were the top and the slide-in navigation. A blog with most of the navigation missing? No, thanks. In addition to that I had no control over the source code and the rich text editor behaves nothing like my usual tools of the trade. Those were itches I definitely wanted to be scratched.

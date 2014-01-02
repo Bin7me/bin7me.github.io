@@ -3,7 +3,6 @@ layout: post
 title: "Google Plus: How to claim authorship of your blog posts on blogger"
 category: entropy
 ---
-## Introduction
 
 When using google for research purposes, you'll often come across search results having a little picture aside and linking to the google+ profile of the author. See the picture below for an example.
 

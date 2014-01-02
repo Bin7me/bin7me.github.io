@@ -3,7 +3,6 @@ layout: post
 title: "Arch Linux: LVM on top of LUKS - 2013 Style"
 category: linux
 ---
-## Introduction
 
 Having not installed arch linux for some time, I was kind of surprised that the installer got abolished and replaced with pacstrap. Simon Dittlmann did a great job [describing an encrypted setup on arch linux](http://www.pindarsign.de/webblog/wp-trackback.php?p=767), but his guide is a bit outdated.
 
