@@ -3,7 +3,6 @@ layout: post
 title: "Arch Linux: Encryption and multiple hard drives"
 category: linux
 ---
-## Introduction
 
 There are many guides out there explaining how to do a full-system encryption on Linux, but most of them, including [my own][lvmOnLuks2013], have a little flaw: They focus on systems with exactly one hard drive. However nowadays hard disks are cheap, SSD+HDD combinations are getting more popular and even some notebooks (like my glorious Thinkpad T520) have multiple drives.
 

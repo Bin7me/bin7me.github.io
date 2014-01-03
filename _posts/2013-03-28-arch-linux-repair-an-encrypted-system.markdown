@@ -3,7 +3,6 @@ layout: post
 title: "Arch Linux: Repair an encrypted system"
 category: linux
 ---
-## Introduction
 
 The following article is for novice to medium users who broke their encrypted system, be it by accident, stupidity or choice. It'll show you how to regain access to your hard drive and conduct a repair attempt, but *not* tell you how to repair a broken encryption (e.g. corrupted headers), because without having countermeasures in place (e.g. backups of said headers) your data is probably lost for good.
 
