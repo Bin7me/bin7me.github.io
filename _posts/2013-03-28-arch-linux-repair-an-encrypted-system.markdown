@@ -20,9 +20,9 @@ But those days are gone for good, because you decided to add another layer of se
 
 I'm assuming you have an unencrypted `/boot`-partition on `/dev/sda1` and an encrypted partition containing your LVM on `/dev/sda2`. After booting with the installation CD and setting up your favourite keyboard-layout and font. You can just type
 
-{% highlight console %}
+~~~console
 # cryptsetup luksOpen /dev/sda2 crypt
-{% endhighlight %}
+~~~
 
 and if you can provide the correct password, the partition will be made accessible as `/dev/mapper/crypt`. Even better, the LVM volumes will also be provided as `/dev/mapper/<volume-name>`. To check if everything went right you can use the `lsblk` command, the output should look something like this (important part highlighted red):
 
@@ -30,12 +30,12 @@ and if you can provide the correct password, the partition will be made accessib
 
 As you can see, the existing LVM volumes were automatically recognized. Very convenient. Now you can mount the partitions and chroot into your environment:
 
-{% highlight console %}
+~~~console
 # mount /dev/mapper/lvmpool-root /mnt
 # mount /dev/sda1 /mnt/boot
 # mount /dev/mapper/lvmpool-home /mnt/home
 # arch-chroot /mnt
-{% endhighlight %}
+~~~
 
 That's it! Wasn't too difficult, was it? 
 
@@ -56,16 +56,16 @@ To be honest: If I cannot find a quick fix for a problem I tend to reinstall my 
 
 Now you are ready to reinstall everything. First of all you have to leave the chroot and unmount the partitions:
 
-{% highlight console %}
+~~~console
 # exit
 # umount /mnt/{boot,home,}
-{% endhighlight %}
+~~~
 
 Subsequently you can follow [my guide][lvmOnLuks2013] starting with Step 3. Don't format your home-partition if you want to keep it! A reboot later your system should be running again. You can now reinstall your packages using the previously generated list:
 
-{% highlight console %}
+~~~console
 # pacman -S $(< pkglist)
-{% endhighlight %}
+~~~
 
 Unfortunately you have to install your manually installed packages, well, manually. Copy your old configuration files back to where they belong and your system should be as good as it was before. (Minus the breakage of course) 
 

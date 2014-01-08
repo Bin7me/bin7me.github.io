@@ -18,15 +18,15 @@ You'd almost think having the same account for your blog and your google+ profil
 
 Open the HTML-view of your current blog template and add the following link somewhere inside the `<head>`-tags.
 
-{% highlight html %}
+~~~html
 <link href='https://plus.google.com/[your-google+-profile-id]?rel=author'/>
-{% endhighlight %}
+~~~
 
 You can find your profile-id in the url to your profile. (Who'd have thought that?) For me, the link looks like this:
 
-{% highlight html %}
+~~~html
 <link href='https://plus.google.com/106482422835272164694?rel=author'/>
-{% endhighlight %}
+~~~
 
 ## Step 1: Link from your profile to the blog
 
