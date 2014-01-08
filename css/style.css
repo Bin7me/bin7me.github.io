@@ -3,7 +3,7 @@ body {
   background: #fff;
   margin: 0px;
   border-top: 5px solid #0077bb;
-  font-family: Arial, 'DejaVu Sans', sans-serif;
+  font-family: serif;
   font-size: 20px;
   font-weight: 300;
   width: 100%;
@@ -31,7 +31,6 @@ span.disabled {
   margin: auto;
   margin-bottom: 21px;
   box-shadow: 0 3px 10px rgba(0,0,0,.5);
-  border: 1px solid #767676;
   font-size: 16px;
   text-align: justify;
   line-height: 1.5em;
@@ -57,6 +56,7 @@ img.myself {
 }
 
 header {
+  font-family: Arial, 'DejaVu Sans', sans-serif;
   background: #ecf2f5;
   margin-bottom: 20px;
   border-bottom: 2px solid #767676;
@@ -64,16 +64,15 @@ header {
 }
 
 code {
-  font-size: 100%;
+  font-family: monospace;
   color: black;
   border: 1px solid #DEDEDE;
   padding: 0px 0.2em;
 }
 
 pre {
-  font-family: Droid Sans Mono, Consolas, "Lucida Console", monospace;
+  font-family: monospace;
   color: black;
-  font-size: 90%;
   background-color: #ffffff;
   padding: 1.2em;
   border: 2px solid #dddddd;
@@ -132,6 +131,7 @@ thead {
 
 pre > code {
   border: none;
+  display: inline-block;
 }
 
 .social {
