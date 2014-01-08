@@ -17,6 +17,7 @@ I couldn't find a guide utilizing the current method of installing arch linux, s
 First of all we should overwrite the whole hard drive with random data to wipe everything that's been on there before. It's not necessary to encrypt your system, but it prevents potential attackers from retrieving old data from the drive. This step is entirely optional.
 
 To overwrite the drive type in:
+
 ~~~console
 # dd if=/dev/urandom of=/dev/HARDDRIVE
 ~~~
@@ -33,6 +34,7 @@ From now on, `/dev/sda1` will be the boot partition and `/dev/sda2` the to be en
 We'll encrypt the full `/dev/sda2` partition using a passphrase, thus the encryption is pretty straight forward:
 
 It might not be necessary to load the kernel module explicitly, but better safe than sorry:
+
 ~~~console
 # modprobe dm_crypt
 ~~~
