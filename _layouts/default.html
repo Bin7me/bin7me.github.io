@@ -26,48 +26,32 @@
 
         <link rel="author" href="https://plus.google.com/{{ site.author.google_plus }}?rel=author">
 
-        <link rel="stylesheet" href="{{ site.baseurl }}css/normalize.css">
+        <!--<link rel="stylesheet" href="{{ site.baseurl }}css/normalize.css">-->
         <link rel="stylesheet" href="{{ site.baseurl }}css/gridism.css">
         <link rel="stylesheet" href="{{ site.baseurl }}css/syntax.css">
         <link rel="stylesheet" href="{{ site.baseurl }}css/style.css">
+		<link rel="stylesheet" href="{{ site.baseurl }}css/print.css" media="print">
 
     </head>
     <body class="wrap wider">
 		<header>
 			<div class="grid header-navigation">
 				<div class="unit two-fifths center-on-mobiles">
-					<div class="grid">
-						<div id="logo-div" class="unit one-quarter center-on-mobiles">
-						  <a href="{{ site.baseurl }}">
-							  <img id="logo" src="{{ site.baseurl }}assets/img/logo.png" alt="sudden kernel panic"/></a>
-						</div>
-						<div id=title-description class="unit three-quarters center-on-mobiles">
+						<div id="title-description">
 						  <span id="title"><a href="{{ site.baseurl }}">{{ site.name }}</a></span><br />
 						  <span id="description">{{ site.description }}</span>
 						</div>
-					</div>
 				</div>
 				<div class="unit three-fifths center-on-mobiles">
 					{% include navigation.html %}
 				</div>
 			</div>
 		</header>
-		
-		<div class="grid no-gutters content">
-			<div class="unit one-quarter">
-				<div class="default-sidebar">
-					{% include sidebar.html %}
-				</div>
-				<div class="mobile-sidebar">
-					{% include mobile_sidebar.html %}
-				</div>
-			</div>
-
-			<div class="unit three-quarters">
-				<article>
-					{{ content }}
-				</article>
-			</div>
+		<div id="article">
+		  <article>
+			{{ content }}
+		  </article>
+		</div>
 		</div>
     </body>
 </html>

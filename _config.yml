@@ -3,7 +3,7 @@ description: sexy problems need sexy solutions
 url: http://bin7me.github.io
 markdown: redcarpet
 redcarpet:
-  extensions: ["smart","tables","no_intra_emphasis","autolink","superscript"]
+  extensions: ["fenced_code_blocks","tables","no_intra_emphasis","autolink","superscript"]
 pygments: true
 author:
   name: Michael Schätzlein
