@@ -29,34 +29,34 @@ Instead of encrypting both partitions with a passphrase, we'll encrypt only `/de
 
 It might not be necessary to load the kernel module explicitly, but better safe than sorry:
 
-{% highlight console %}
+~~~console
 # modprobe dm_crypt
-{% endhighlight %}
+~~~
 
 Now we encrypt `/dev/sda2` with our encryption algorithm of choice:
 
-{% highlight console %}
+~~~console
 # cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 5000 -y luksFormat /dev/sda2
-{% endhighlight %}
+~~~
 
 I wont go over all arguments in detail, as they are explained in [my guide][lvmOnLuks2013] and on the according [man page][cryptsetupManpage]. To encrypt `/dev/sdb1` we first need a keyfile, 20KB of random data should be sufficient:
 
-{% highlight console %}
+~~~console
 # dd if=/dev/urandom of=keyfile bs=1024 count=20
-{% endhighlight %}
+~~~
 
 Now we can use this keyfile to encrypt /dev/sdb1:
 
-{% highlight console %}
+~~~console
 # cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 5000 --key-file keyfile luksFormat /dev/sb1
-{% endhighlight %}
+~~~
 
 Finally we open our new partitions to start setting up the lvm:
 
-{% highlight console %}
+~~~console
 # cryptsetup luksOpen /dev/sda2 crypt_root 
 # cryptsetup --key-file keyfile luksOpen /dev/sdb1 crypt_pool
-{% endhighlight %}
+~~~
 
 ## Step 2: Setting up LVM
 
@@ -64,13 +64,13 @@ The time has come to setup LVM on `crypt_pool`. The `crypt_root` partition won't
 
 Setting up the volumes is business as usual:
 
-{% highlight console %}
+~~~console
 # lvm pvcreate /dev/mapper/crypt_pool
 # lvm vgcreate lvmpool /dev/mapper/crypt_pool
 # lvm lvcreate -L 5GB -n var lvmpool
 # lvm lvcreate -L 1GB -n swap lvmpool
 # lvm lvcreate -l 100%FREE -n home lvmpool
-{% endhighlight %}
+~~~
 
 [![output of lsblk][lsblk]][lsblk]
 
@@ -78,18 +78,18 @@ Setting up the volumes is business as usual:
 
 Installing the base system contains no nasty surprises, thus let's quickly format all partitions and get over with it:
 
-{% highlight console %}
+~~~console
 # mkfs.ext4 /dev/sda1
 # mkfs.ext4 /dev/mapper/crypt_root
 # mkfs.ext4 /dev/mapper/lvmpool-var
 # mkfs.ext4 /dev/mapper/lvmpool-home
 # mkswap /dev/mapper/lvmpool-swap
 # swapon /dev/mapper/lvmpool-swap
-{% endhighlight %}
+~~~
 
 Be careful to mount everything in the right spot before starting pacstrap:
 
-{% highlight console %}
+~~~console
 # mount /dev/mapper/crypt_root /mnt
 # mkdir /mnt/boot
 # mkdir /mnt/var
@@ -97,7 +97,7 @@ Be careful to mount everything in the right spot before starting pacstrap:
 # mount /dev/sda1 /mnt/boot
 # mount /dev/mapper/lvmpool-var /mnt/var
 # mount /dev/mapper/lvmpool-home /mnt/home 
-{% endhighlight %}
+~~~
 
 [![output of lsblk after mounting everything][lsblkAfterMount]][lsblkAfterMount]
 
@@ -105,33 +105,33 @@ Be careful to mount everything in the right spot before starting pacstrap:
 
 Before chrooting into the new installation we'll setup the auto-decryption of the second hard drive. First we copy the keyfile to somewhere safe:
 
-{% highlight console %}
+~~~console
 # cp keyfile /mnt/root
-{% endhighlight %}
+~~~
 
 Then, we have to adjust the `/mnt/etc/crypttab` accordingly. Just add the following line:
 
-{% highlight bash %}
+~~~bash
 crypt_hdd UUID=xyz /root/keyfile luks
-{% endhighlight %}
+~~~
 
 Where xyz is the UUID of `/dev/sdb1`. If you don't know it by heart, you can find it like this:
 
-{% highlight console %}
+~~~console
 # ls -l /dev/disk/by-uuid
-{% endhighlight %}
+~~~
 
 Be careful to pick the right one! If at least  one of your drives is a SSD, you might want to [configure TRIM support][trim] to enhance the lifetime of your drive. *Caution:* Enabling TRIM support is a possible security issue. No matter what, we have to add the proper hooks to *mkinitcpio.conf* before generating the ramdisk:
 
-{% highlight bash %}
+~~~bash
 HOOKS="base udev autodetect modconf block keymap encrypt lvm2 filesystems keyboard fsck"
-{% endhighlight %}
+~~~
 
 After installing the bootloader of choice (I'm using syslinux), we have to adjust its configuration, too. In `/boot/syslinux/syslinux.cfg`, the two APPEND entries for arch and archfallback have to be changed to
 
-{% highlight bash %}
+~~~bash
 APPEND root=/dev/mapper/crypt_root cryptdevice=/dev/sda2:crypt_root ro
-{% endhighlight %}
+~~~
 
 [![syslinux configuration][syslinux]][syslinux]
 
