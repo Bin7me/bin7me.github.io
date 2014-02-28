@@ -159,10 +159,12 @@ pre > code {
   margin-bottom: 20px;
   border-bottom: 2px solid #767676;
   box-shadow: 0 3px 10px rgba(0,0,0,.1);
+  padding: 10px;
 }
 
 #logo-div {
   text-align: center;
+  min-height: 64px;
 }
 
 #logo {
@@ -172,6 +174,7 @@ pre > code {
 
 #title-description {
   text-align: center;
+  padding-top: 5px;
 }
 
 #title {
@@ -251,6 +254,10 @@ pre > code {
 
 #archive li a {
   text-decoration: underline;
+}
+
+.navigation-item {
+  min-height: 70px;
 }
 
 .post {
