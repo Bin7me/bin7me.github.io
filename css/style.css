@@ -162,6 +162,10 @@ pre > code {
   padding: 10px;
 }
 
+#logo-title {
+  margin: auto;
+}
+
 #logo-div {
   text-align: center;
   min-height: 64px;
