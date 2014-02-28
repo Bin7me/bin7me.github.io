@@ -2,7 +2,7 @@
 layout: default
 title: about
 ---
-<h2><a href="{{ page.url }}">about</a></h2>
+<h1 class="post-h1"><a href="{{ page.url }}">about</a></h1>
 <div class="grid">
 	<div class="unit one-third">
     <a href="{{ site.baseurl }}assets/img/about/sunglasses.png"><img class="myself" src="{{ site.baseurl }}assets/img/about/sunglasses.png" alt="a picture of me" /></a>
@@ -32,14 +32,14 @@ title: about
 			</div>
 			<div class="about-item">
 				<div class="about-desc">social</div>
-				<div>
+				<div id="social-links">
 					<a href="https://plus.google.com/{{ site.author.google_plus }}">
 						<img class="social" src="{{ site.baseurl }}assets/img/social/gplus-logo.png" alt="google+"/>
 					</a>
 					<a href="https://twitter.com/{{ site.author.twitter }}">
 						<img class="social" src="{{ site.baseurl }}assets/img/social/twitter-logo.png" alt="twitter"/>
-          </a>
-        </div>
+					</a>
+				</div>
         <div class="about-item">
           <div class="about-desc">code</div>
           <a href="https://github.com/bin7me">fork me on github</a>
