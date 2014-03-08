@@ -58,12 +58,6 @@ img.social {
   border-radius: 0px;
 }
 
-img.myself {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 header {
   text-align: left;
 }
@@ -278,11 +272,14 @@ pre > code {
   text-align: left;
 }
 
+#myself {
+  width: 100%;
+  max-width: 250px;
+}
+
 #about {
   font-size: 16px;
   border-radius: 5px;
-  padding: .5em;
-  margin: 0 .5em;
 }
 
 #about a {
