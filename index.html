@@ -5,13 +5,19 @@ title: sudden kernel panic
 
 <div id="excerpts">
     {% for post in paginator.posts %}
-		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-		<p class="meta">{{ post.date | date: "%Y-%m-%d" }}</p>
+	<article>
+	  <header>
+		<h1 class="post-h1"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+		<time class="meta" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+	  </header>
+	  <section>
 		<div class="post">
 			{{ post.excerpt }}
 		</div>
 		<a href="{{ post.url }}">more...</a>
 		<hr />
+	  </section>
+	</article>
     {% endfor %}
 </div>
 

@@ -1,30 +1,41 @@
 body {
-  border: none;
+	border: none;
 }
 
 header {
-  display: none;
+	display: none;
 }
 
 #article {
-  margin: auto;
-  width: 90%;
-  background: none;
-  border: none;
-  box-shadow: none;
-  font-size: 12px;
+	margin: auto;
+	width: 100%;
+	background: none;
+	border: none;
+	box-shadow: none;
+	font-size: 12px;
 }
 
 pre, code {
-  font-size: 12px;
-  
+	font-size: 12px;
+	
 }
 
 .paginator {
-  display: none;
+	display: none;
 }
 
 /* Show URL */
-a:link, a:visited {background: transparent; color:#333; text-decoration:none;}
-a:link[href^="http://"]:after, a[href^="http://"]:visited:after {content: " (" attr(href) ") "; font-size: 11px;}
-a[href^="http://"] {color:#000;} 
+a a:link, a:visited {
+	background: transparent;
+	color:#333;
+	text-decoration:none;
+}
+
+a:link:after, a:visited:after {
+	content: " (" attr(href) ") ";
+	font-size: 11px;
+}
+
+a {
+	color:#000;
+}
