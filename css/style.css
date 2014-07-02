@@ -86,8 +86,13 @@ table {
   border-style: hidden;
 }
 
+tbody {
+  border-bottom: 1px solid;
+}
+
 th {
-  border-bottom: 2px solid;
+  border-top: 2px solid;
+  border-bottom: 1px solid;
 }
 
 th, td {
@@ -96,14 +101,18 @@ th, td {
   margin: 2px;
 }
 
-tr {
-  border-bottom: 1px solid;
-}
-
 thead {
   display: table-header-group;
   vertical-align: middle;
   border-color: inherit;
+}
+
+td.first-column {
+  font-weight: bold;
+}
+
+caption {
+  font-size: 14px;
 }
 
 @media (min-width: 768px){
