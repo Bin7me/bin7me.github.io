@@ -10,7 +10,7 @@ You can find the whole thesis [here][thesis].
 
 <!--more-->
 
-# An gerneric and integrated software support for the visualization of metrics in the context of Enterprise Architecture Management
+# A generic and integrated software support for the visualization of metrics in the context of Enterprise Architecture Management
 
 ## Abstract
 These days, enterprise architects increasingly need quantitative enterprise architecture (EA) models as additional information foundation for decisions besides established qualitative models (e.g. EA domain models). Additionally, a growing number of stakeholders (e.g. compliance or risk management) need specific enterprise architecture management (EAM) metrics. In recent years an increasing number of publications were made on the subject of EAM metrics and performance indicators, however the aspect of metric visualization is not sufficiently addressed.
