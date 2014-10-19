@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Goodbye Evernote, Hello Org!"
-category: technology
+category: emacs
 ---
 
 It finally happened. I got hooked on [Emacs][emacs] [Org-mode][orgmode]. And the worst part: I felt right at home. Though some keybindings are still mind-boggling, Emacs is going strong to become my text editor of choice for most use-cases. (Don't worry VIM, I still love you) Org-mode on the other hand is going strong to become my PIM-tool of choice, at least for notes and todos and maybe a bit of my calendar. Thus, I now have two tools trying to fill the same void in my life: [Evernote][evernote] and Org. Evernote has a slick smartphone application and a polished web-interface, Org is free software, based on the glory of plain text and incredibly powerful. (And it gives more geek-cred) Let's see if the latter can replace the former.
