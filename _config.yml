@@ -1,6 +1,6 @@
 name: sudden kernel panic
 description: sexy problems need sexy solutions
-baseurl: http://bin7me.github.io/
+baseurl: /
 url: http://bin7me.github.io
 markdown: redcarpet
 redcarpet:
