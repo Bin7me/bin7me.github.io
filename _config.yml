@@ -5,7 +5,7 @@ url: http://bin7me.github.io
 markdown: redcarpet
 redcarpet:
   extensions: ["fenced_code_blocks","tables","no_intra_emphasis","autolink","superscript"]
-pygments: true
+highlighter: pygments
 author:
   name: Michael Schätzlein
   google_plus: 106482422835272164694 
@@ -14,14 +14,14 @@ author:
 paginate: 5
 excerpt_separator: <!--more-->
 navigation:
-  - text: home
-    title: back to the home page
+  - text: index
+    title: zurück zum Start
     url: /index.html
-  - text: archive
-    title: archive 
-    url: /archive.html
+  - text: archiv
+    title: archiv
+    url: /archiv.html
   - text: about
-    title: about me
+    title: über mich
     url: /about.html
   - text: feed
     title: rss feed
