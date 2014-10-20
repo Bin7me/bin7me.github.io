@@ -80,6 +80,7 @@ pre {
   padding: 1.2em;
   border: 2px solid #dddddd;
   overflow: auto;
+  line-height: 1.4em;
 }
 
 table {
