@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "Emacs on all the things: Org-mode and babel ftw"
+title: "Eine für alle: Mit Org-mode die init.el plattformunabhängiger machen"
 category: emacs
 ---
 
-Over the last year Emacs somewhat grew on me. At first it was only Org-mode as a [replacement for Evernote][goodbyeEvernote], but then [evil][evil] replaced vim and suddenly Emacs was my goto application for all text editing needs. With every new task my `init.el` got a few lines longer and soon I divided it into several files to stay on top of things.
+Im Verlaufe des letzten Jahres ist mir Emacs überraschenderweise ans Herz gewachsen. Zunächst ging es ja nur darum mit Org-mode einen [Ersatz für Evernote][goodbyeEvernote] zu schaffen, aber dann hat [evil][evil] auf einmal Vim ersetzt und auf einmal war Emacs mein Standard-Werkzeug in Sachen Textbearbeitungen aller Art. Natürlich wollte ich diesen Luxus auf all meinen Systemen haben, zum Glück ist Emacs plattformunabhängig. Meine `init.el` war, obwohl fein säuberlich in einzelne Dateien gegliedert, es allerdings nicht. Nach jeder Änderung mussten die betreffenden Abschnitte auf meiner Windows-Kiste händisch angepasst werden. Lästig, aber zu dem Zeitpunkt noch im Rahmen.
 
-Of course I want to have this goodness on all my systems, fortunately Emacs is platform-independent. Unfortunately my Emacs configuration is not, different machines have e.g. different paths or a different color theme. Until now I declared one configuration as *the* configuration and manually edited the corresponding settings on all other machines. But there is a better way utilizing the power of Org-mode and babel.
+Jetzt kam eine zweite Windows-Maschine dazu und aus *lästig* wurde *nervtötend*. Also musste eine neue Lösung her, am Besten eine Art Single-Point-Of-Configuration um zwischen den einzelnen Systemen umzuschalten. Org-mode und Babel to the rescue!
 
 <!--more-->
 
 ## Step 0: Embed your Emacs configuration in an Org-mode file
-~~~~lisp
+{% highlight lisp linenos=table %}
 * base																		:my-tangle-tag:
 #+BEGIN_SRC emacs-lisp :tangle (and (car (member tangle-tag (org-get-tags-at (point)))) "yes")
   ;; org-directory
@@ -27,7 +27,7 @@ Of course I want to have this goodness on all my systems, fortunately Emacs is p
 
   ;;; more configuration
 #+END_SRC
-~~~~
+{% endhighlight %}
 
 ## Step 1: Replace your init.el
 ~~~~lisp
