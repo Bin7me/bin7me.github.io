@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I proudly present: my Master's Thesis"
-category: live
+category: life
 ---
 
 Finally, I got my last grade in my university career: the grade for my Master's Thesis. As a publication of the results cannot possibly hinder the evaluation process anymore I hereby proudly present the results.
