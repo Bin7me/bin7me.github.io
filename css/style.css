@@ -19,6 +19,10 @@ a.paginator {
   text-decoration: underline;
 }
 
+strong {
+  font-weight: bold;
+}
+
 span.disabled {
   color: #9EABB3;
   font-weight: 700;
