@@ -119,28 +119,6 @@ caption {
   font-size: 14px;
 }
 
-@media (min-width: 768px){
-
-  #main {
-	width: 75%;
-  }
-
-  pre, code {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 568px) {
-
-  #main {
-	text-align: left;
-  }
-
-  img {
-	max-width: 100%;
-  }
-}
-
 pre > code {
   border: none;
   display: inline-block;
@@ -315,4 +293,40 @@ pre > code {
   font-family: monospace;
   word-spacing: 5px;
   line-height: 1.5em;
+}
+
+@media (min-width: 768px){
+
+  #main {
+	width: 75%;
+  }
+
+  pre, code {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 568px) {
+
+  #main {
+	text-align: left;
+  }
+
+  img {
+	max-width: 100%;
+  }
+
+  #top-nav li {
+	display: block;
+	padding: 5px 0px;
+	margin: 5px 0px;
+  }
+
+  #top-nav li a {
+	width: 100%;
+  }
+
+  #top-nav li.active a {
+	width: 100%;
+  }
 }
