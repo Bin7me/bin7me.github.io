@@ -19,6 +19,10 @@ a.paginator {
   text-decoration: underline;
 }
 
+strong {
+  font-weight: bold;
+}
+
 span.disabled {
   color: #9EABB3;
   font-weight: 700;
@@ -86,8 +90,13 @@ table {
   border-style: hidden;
 }
 
+tbody {
+  border-bottom: 1px solid;
+}
+
 th {
-  border-bottom: 2px solid;
+  border-top: 2px solid;
+  border-bottom: 1px solid;
 }
 
 th, td {
@@ -96,36 +105,18 @@ th, td {
   margin: 2px;
 }
 
-tr {
-  border-bottom: 1px solid;
-}
-
 thead {
   display: table-header-group;
   vertical-align: middle;
   border-color: inherit;
 }
 
-@media (min-width: 768px){
-
-  #main {
-	width: 75%;
-  }
-
-  pre, code {
-    font-size: 14px;
-  }
+td.first-column {
+  font-weight: bold;
 }
 
-@media (max-width: 568px) {
-
-  #main {
-	text-align: left;
-  }
-
-  img {
-	max-width: 100%;
-  }
+caption {
+  font-size: 14px;
 }
 
 pre > code {
@@ -302,4 +293,40 @@ pre > code {
   font-family: monospace;
   word-spacing: 5px;
   line-height: 1.5em;
+}
+
+@media (min-width: 768px){
+
+  #main {
+	width: 75%;
+  }
+
+  pre, code {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 568px) {
+
+  #main {
+	text-align: left;
+  }
+
+  img {
+	max-width: 100%;
+  }
+
+  #top-nav li {
+	display: block;
+	padding: 5px 0px;
+	margin: 5px 0px;
+  }
+
+  #top-nav li a {
+	width: 100%;
+  }
+
+  #top-nav li.active a {
+	width: 100%;
+  }
 }

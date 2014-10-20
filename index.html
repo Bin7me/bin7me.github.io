@@ -14,7 +14,10 @@ title: sudden kernel panic
 		<div class="post">
 			{{ post.excerpt }}
 		</div>
-		<a href="{{ post.url }}">more...</a>
+		{% if post.short%}
+		{% else %}
+		  <a href="{{ post.url }}">weiter...</a>
+		{% endif %}
 		<hr />
 	  </section>
 	</article>
@@ -23,13 +26,13 @@ title: sudden kernel panic
 
 <div class="paginator">
 	{% if paginator.previous_page %}
-		<a class="paginator" href="{{ paginator.previous_page_path }}">NEWER POSTS</a>
+		<a class="paginator" href="{{ paginator.previous_page_path }}">NEUERE BEITRÄGE</a>
 	{% else %}
-		<span class="disabled">NEWER POSTS</span>
+		<span class="disabled">NEUERE BEITRÄGE</span>
 	{% endif %}
 	{% if paginator.next_page %}
-		<a class="paginator" href="{{ paginator.next_page_path }}">OLDER POSTS</a>
+		<a class="paginator" href="{{ paginator.next_page_path }}">ÄLTERE BEITRÄGE</a>
 	{% else %}
-		<span class="disabled">OLDER POSTS</span>
+		<span class="disabled">ÄLTERE BEITRÄGE</span>
 	{% endif %}
 </div>
