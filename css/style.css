@@ -4,7 +4,7 @@ body {
   margin: 0px;
   border-top: 5px solid #0077bb;
   font-family: 'Open Sans', 'Arial', sans-serif;
-  font-size: 20px;
+  font-size: large;
   font-weight: 300;
   width: 100%;
 }
@@ -33,7 +33,7 @@ span.disabled {
   padding: 21px;
   margin: auto;
   margin-bottom: 21px;
-  font-size: 16px;
+  font-size: medium;
   text-align: left;
   line-height: 1.5em;
 }
@@ -295,14 +295,37 @@ pre > code {
   line-height: 1.5em;
 }
 
+/* code highlighting table */
+.highlighttable {
+  display: table
+}
+
+.highlighttable tbody {
+  border: none;
+}
+
+.highlighttable td {
+  margin: 0px;
+  padding: 0px;
+}
+
+.highlighttable .linenodiv pre {
+  padding-left: 0px;
+  padding-right: 5px;
+  border-right: none;
+  text-align: right;
+}
+
+.highlighttable .highlight pre {
+  padding-left: 5px;
+  padding-right: 0px;
+  border-left: none;
+}
+
 @media (min-width: 768px){
 
   #main {
 	width: 75%;
-  }
-
-  pre, code {
-    font-size: 14px;
   }
 }
 
