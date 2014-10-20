@@ -14,7 +14,10 @@ title: sudden kernel panic
 		<div class="post">
 			{{ post.excerpt }}
 		</div>
-		<a href="{{ post.url }}">more...</a>
+		{% if post.short%}
+		{% else %}
+		  <a href="{{ post.url }}">weiter...</a>
+		{% endif %}
 		<hr />
 	  </section>
 	</article>
