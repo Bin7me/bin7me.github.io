@@ -13,7 +13,7 @@ Jetzt kam eine zweite Windows-Maschine dazu und aus *lästig* wurde *inakzeptabe
 ## Schritt 0: Die Emacs-Konfiguration in ein Org-mode-Dokument einbetten
 Zunächst gilt es natürlich die `init.el` bzw. deren Bestandteile in ein entsprechendes Org-mode-Dokument zumzuziehen, die [Introduction to Babel][literateProgramming] verrät was es damit auf sich hat. Die Grundidee dabei ist, den Inhalt der `init.el` in Emacs-Lisp-SRC-Blöcke aufzuteilen und beim Start von Emacs diese Blöcke aus der Org-mode-Datei zu extrahieren und zusammen als Konfiguration zu laden. Soweit so gut.
 
-Nun möchte ich aber nicht *alle* SRC-Blöcke laden, sondern nur die für die jeweilige Maschine relevanten, zur Unterscheidung bieten sich hierbei Tags an. Im untenstehenden Codebeispiel ist ein Auschnitt aus einer Org-mode-Datei zu sehen, die unter der Überschrift *"Pfade"* zwei Alternative Konfigurationen enthält. Getaggt sind die Unter-Überschriften mit dem Namen des jeweiligen Rechners. Die Magie passiert jetzt in den Zeilen 3 bzw. 11, im Header der einzelnen SRC-Blöcke.
+Nun möchte ich aber nicht *alle* SRC-Blöcke laden, sondern nur die für die jeweilige Maschine relevanten, zur Unterscheidung bieten sich hierbei Tags an. Im untenstehenden Codebeispiel ist ein Auschnitt aus einer Org-mode-Datei zu sehen, die unter der Überschrift *"Pfade"* zwei Alternative Konfigurationen enthält. Getaggt sind die Unter-Überschriften mit dem Namen des jeweiligen Rechners. Die Magie passiert jetzt in den Zeilen 3 bzw. 11, im Header der einzelnen SRC-Blöcke. 
 
 {% highlight lisp linenos=table %}
 * Pfade
@@ -34,7 +34,11 @@ Nun möchte ich aber nicht *alle* SRC-Blöcke laden, sondern nur die für die je
 #+END_SRC
 {% endhighlight %}
 
+Der Audruck `(and (car (member tangle-tag (org-get-tags-at (point)))) "yes")` prüft, ob in den Tags der aktuellen Org-Überschrift der Inhalt der Variable `tangle-tag` enthalten ist und setzt in dem Fall den Wert des `:tangle`-Parameters auf `"yes"`. D.h. es werden nur die SRC-Blöcke extrahiert die mit dem `tangle-tag` getaggt sind. Hört sich schon mal gut an, fehlt nur noch eine Kleinigkeit.
+
 ## Step 1: Die init.el austauschen
+Nachdem die Emacs-Konfiguration jetzt ordentlich aufgeteilt und getaggt ist, muss sie nur noch gemäß den Tags aus der Org-mode-Datei extrahiert und geladen werden. Dafür sorgt folgende `init.el` (siehe auch die [Introduction to Babel][literateProgramming]):
+
 {% highlight lisp linenos=table %}
 (package-initialize)
 
@@ -48,7 +52,10 @@ Nun möchte ich aber nicht *alle* SRC-Blöcke laden, sondern nur die für die je
 (mapc #'org-babel-load-file (directory-files dotfiles-dir t "\\.org$"))
 {% endhighlight %}
 
+Relevant ist vor allem Zeile 3, in der `tangle-tag` entsprechend der aktuellen Maschine gesetzt wird. Diese Anpassung ist auf jedem System einmalig vorzunehmen. Die letzte Zeile lädt jetzt alle `*.org`-Dateien im gleichen Verzeichnis wie die `init.el`, extrahiert alle Emacs-Lisp-Blöcke und lädt diese in Emacs. Das Ergebnis: Eine Emacs-Konfiguration die nur Code enthält, der für das aktuelle System getaggt wurde. Nice.
+
 ## Step 2: Zurücklehnen und genießen
+
 
 [evil]: https://gitorious.org/evil/pages/Home
 [goodbyeEvernote]: {% post_url 2013-11-08-goodbye-evernote-hello-org-mode %} 
