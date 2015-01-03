@@ -114,6 +114,10 @@ td.first-column {
   font-weight: bold;
 }
 
+td.linenos {
+  width: 40px;
+}
+
 caption {
   font-size: 14px;
 }
@@ -296,7 +300,8 @@ pre > code {
 
 /* code highlighting table */
 .highlighttable {
-  display: table
+  display: table;
+  table-layout: fixed;
 }
 
 .highlighttable tbody {
