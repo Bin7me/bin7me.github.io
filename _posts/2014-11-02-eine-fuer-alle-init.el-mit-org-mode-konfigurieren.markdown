@@ -15,9 +15,9 @@ Zunächst gilt es natürlich die `init.el` bzw. deren Bestandteile in ein entspr
 
 Nun möchte ich aber nicht *alle* SRC-Blöcke laden, sondern nur die für die jeweilige Maschine relevanten, zur Unterscheidung bieten sich hierbei Tags an. Im untenstehenden Codebeispiel ist ein Auschnitt aus einer Org-mode-Datei zu sehen, die unter der Überschrift *"Pfade"* zwei Alternative Konfigurationen enthält. Getaggt sind die Unter-Überschriften mit dem Namen des jeweiligen Rechners. Die Magie passiert jetzt in den Zeilen 3 bzw. 11, im Header der einzelnen SRC-Blöcke. 
 
-{% highlight lisp linenos=table %}
+{% highlight emacs-lisp linenos=table %}
 * Pfade
-** base																		:my-linux-box:
+** base							:my-linux-box:
 #+BEGIN_SRC emacs-lisp :tangle (and (car (member tangle-tag (org-get-tags-at (point)))) "yes")
   ;; org-directory
   (setq org-directory "~/org/")
@@ -25,7 +25,7 @@ Nun möchte ich aber nicht *alle* SRC-Blöcke laden, sondern nur die für die je
   ;;; more configuration
 #+END_SRC
 
-** alternative	       														:my-windows-box:
+** alternative						:my-windows-box:
 #+BEGIN_SRC emacs-lisp :tangle (and (car (member tangle-tag (org-get-tags-at (point)))) "yes")
   ;; org-directory
   (setq org-directory "C:/Users/username/Documents/org/")
@@ -39,7 +39,7 @@ Der Audruck `(and (car (member tangle-tag (org-get-tags-at (point)))) "yes")` pr
 ## Die init.el austauschen
 Nachdem die Emacs-Konfiguration jetzt ordentlich aufgeteilt und getaggt ist, muss sie nur noch gemäß den Tags aus der Org-mode-Datei extrahiert und geladen werden. Dafür sorgt folgende `init.el` (siehe auch die [Introduction to Babel][literateProgramming]):
 
-{% highlight lisp linenos=table %}
+{% highlight emacs-lisp linenos=table %}
 (package-initialize)
 
 (setq tangle-tag "my-linux-box")
