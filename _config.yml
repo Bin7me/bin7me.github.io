@@ -27,3 +27,5 @@ navigation:
   - text: feed
     title: rss feed
     url: /feed.xml
+
+theme: jekyll-theme-minimal
