@@ -1,38 +1,68 @@
----
-layout: default
-title: sudden kernel panic 
----
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+    Ultima Cumaei venit iam carminis aetas;
+    magnus ab integro saeclorum nascitur ordo.
+    iam redit et Virgo, redeunt Saturnia regna,
+    iam nova progenies caelo demittitur alto.
 
-<div id="excerpts">
-    {% for post in paginator.posts %}
-	<article>
-	  <header>
-		<h1 class="post-h1"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-		<time class="meta" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</time>
-	  </header>
-	  <section>
-		<div class="post">
-			{{ post.excerpt }}
-		</div>
-		{% if post.short%}
-		{% else %}
-		  <a href="{{ post.url }}">weiter...</a>
-		{% endif %}
-		<hr />
-	  </section>
+    Iuppiter omnipotens, audacibus annue coeptis.
+
+                    /\
+                   /  \
+                  /    \
+                 /.-""-.\
+                /< (()) >\
+               /  `-..-'  \
+              /            \
+             /              \
+            /________________\
+
+-->
+<title>sudden kernel panic</title>
+<base href="https://bin7me.github.io/">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+<meta name="author" content="~bin7me"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+</head>
+<body>
+<header id="header">
+  <h1>sudden kernel panic</h1>
+  <pre>
+Ultima Cumaei venit iam carminis aetas;
+magnus ab integro saeclorum nascitur ordo.
+iam redit et Virgo, redeunt Saturnia regna,
+iam nova progenies caelo demittitur alto.
+
+Iuppiter omnipotens, audacibus annue coeptis.
+
+/\
+/  \
+/    \
+/.-""-.\
+/< (()) >\
+/  `-..-'  \
+/            \
+/              \
+/________________\
+  </pre>
+</header>
+<div id="main">
+  <div class="section">
+    <h2 class="article-header">the blog moved</h2><div class="date">2020-09-07</div><br/>
+	<article class="article">
+	  It can now be found at <a href="https://mbwschaetzlein.de">https://mbwschaetzlein.de</a>
+	  <div class="signature">~bin7me</div>
 	</article>
-    {% endfor %}
-</div>
+  </div>
 
-<div class="paginator">
-	{% if paginator.previous_page %}
-		<a class="paginator" href="{{ paginator.previous_page_path }}">NEUERE BEITRÄGE</a>
-	{% else %}
-		<span class="disabled">NEUERE BEITRÄGE</span>
-	{% endif %}
-	{% if paginator.next_page %}
-		<a class="paginator" href="{{ paginator.next_page_path }}">ÄLTERE BEITRÄGE</a>
-	{% else %}
-		<span class="disabled">ÄLTERE BEITRÄGE</span>
-	{% endif %}
+  <hr/>
+  
 </div>
+<footer id="footer">
+</footer>
+</body>
+</html>
